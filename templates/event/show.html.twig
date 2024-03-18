@@ -1,0 +1,18 @@
+{# templates/event/show.html.twig#}
+
+{% extends "base.html.twig" %}
+
+{% block title %} Event Details {% endblock %}
+{% block content %}
+<div class="event-details">
+<h1>Event Details</h1>
+<strong>{{event.name}}</strong><br>
+<span>At: {{event.location}}</span><br>
+{% if event.details is empty %}
+<p>No more details</p>
+{% else %}
+<span> {{event.details}}</span><br>
+{% endif %}
+<a href="{{ path('index') }}">Back to list</a>
+</div>
+{% endblock %}

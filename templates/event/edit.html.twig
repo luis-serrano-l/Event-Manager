@@ -1,0 +1,18 @@
+{# templates/event/edit.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Event{% endblock %}
+
+{% block content %}
+    <div class="event-form">
+        <h1>Edit Event</h1>
+        {{ form_start(form) }}
+        {{ form_row(form.name) }}
+        {{ form_row(form.location) }}
+        {{ form_row(form.date) }}
+        {{ form_row(form.time) }}
+        {{ form_end(form) }}
+        <a href="{{ path('index') }}">Back to list</a>
+    </div>
+{% endblock %}

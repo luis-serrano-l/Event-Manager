@@ -1,0 +1,41 @@
+{# templates/event/index.html.twig#}
+
+{% extends "base.html.twig" %}
+
+{% block title %} Events list {% endblock %}
+{% block content %}
+<div class="events-container">
+    <h1>Events</h1>
+    <a href="{{ path('create_event') }}">New</a>
+    {% if events is empty %}
+    <p>No events</p>
+    {% else %}
+    <table class="event-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Location</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for event in events %}
+            <tr>
+                <td>{{ event.name }}</td>
+                <td>{{ event.location }}</td>
+                <td>{{ event.date|date('d-m-Y') }}</td>
+                <td>{{ event.time|date('H:i') }}</td>
+                <td class="actions">
+                    <a href="{{ path('show_event', {'id': event.id}) }}">View</a>
+                    <a href="{{ path('edit_event', {'id': event.id}) }}">Edit</a>
+                    <a href="{{ path('delete_event', {'id': event.id}) }}" class="delete-link">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,19 @@
+index:
+    path: /events
+    controller: App\Controller\EventController::list
+
+create_event:
+    path: /events/create
+    controller: App\Controller\EventController::create
+
+show_event:
+    path: '/events/show/{id}'
+    controller: App\Controller\EventController::show
+
+delete_event:
+    path: '/events/delete/{id}'
+    controller: App\Controller\EventController::delete
+
+edit_event:
+    path: '/events/edit/{id}'
+    controller: App\Controller\EventController::edit

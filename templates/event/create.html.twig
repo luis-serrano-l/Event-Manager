@@ -1,0 +1,30 @@
+{# templates/event/create.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Create Event{% endblock %}
+{% block content %}
+
+<div class="event-form">
+    <h1>Create Event</h1>
+    {{ form_start(form) }}
+    <div>
+        {{ form_label(form.name) }}
+        {{ form_widget(form.name) }}
+    </div>
+    <div>
+        {{ form_label(form.location) }}
+        {{ form_widget(form.location) }}
+    </div>
+    <div>
+        {{ form_label(form.date) }}
+        {{ form_widget(form.date) }}
+    </div>
+    <div>
+        {{ form_label(form.time) }}
+        {{ form_widget(form.time) }}
+    </div>
+    {{ form_end(form) }}
+    <a href="{{ path('index') }}">Back to list</a>
+</div>
+{% endblock %}
